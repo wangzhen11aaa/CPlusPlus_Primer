@@ -28,6 +28,7 @@ int main(void)
 
     CandyBar snack[3] = {{"abc d", 1.2, 300}, {"ab cd", 2.4, 400}, {"abcd", 0, 0}};
     cout << snack->name << ", " << (snack + 1)->name << ", " << (snack + 2)->name << endl;
+    delete [] pc;
 
 
     return 0;

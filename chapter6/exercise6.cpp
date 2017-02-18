@@ -48,5 +48,6 @@ int main(void)
         if ((pc + i)->money < 10000)
             cout << "Patrons :" << (pc + i)->name << endl;
 
+    delete [] pc;
     return 0;
 }

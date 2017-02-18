@@ -63,7 +63,7 @@ int main(void)
             break;
 
     }
-
+    delete []bop_member;
     return 0;
 }
 
