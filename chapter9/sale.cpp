@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <cstring>
 #include "sale.h"
 
 namespace SALES
@@ -23,9 +24,6 @@ namespace SALES
                 max = ar[i];
             total += ar[i];
         }
-
-        for (int i = num_sales; i < QUARTERS; i++)
-            s.sales[i] = 0;
 
         s.max = max;
         s.min = min;
