@@ -16,7 +16,7 @@ Stonewt::Stonewt(double lbs, Mode form)
 {
     mode = form;
     pounds = lbs;
-    stone = lbs / Lbs_per_stn;
+    stone = int(lbs) / Lbs_per_stn;
     pds_left = pounds - stone * Lbs_per_stn;
 }
 
