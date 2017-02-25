@@ -1,3 +1,6 @@
-The max trial :5368 in (distance, dstep) = (100 ,2) 
-The min trial :1002 in (distance, dstep) = (100 ,2) 
-The average step in all trials :0.0265793
+The max trial :2762 in (distance, dstep) = (100 ,2) 
+The min trial :1913 in (distance, dstep) = (100 ,2) 
+The average step in all trials :0.0427807
+The max trial :3009 in (distance, dstep) = (200 ,3) 
+The min trial :1033 in (distance, dstep) = (200 ,3) 
+The average step in all trials :0.0458873
