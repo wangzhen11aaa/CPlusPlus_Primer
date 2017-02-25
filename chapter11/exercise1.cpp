@@ -15,6 +15,7 @@ int main(void)
     using std::cin;
 
     using VECTOR::Vector;
+
     srand(time(0)); // seed random-number generator
 
     double direction;
@@ -37,7 +38,7 @@ int main(void)
             break;
         of_obj << "Target Distance :" << target << ", " << "Step Size : " << dstep << std::endl;
         while (result.magval() < target) {
-            direction = random() % 360;
+            direction = (random() % 360);
             step.reset(dstep, direction, Vector::POL);
             result = result + step;
             steps++;

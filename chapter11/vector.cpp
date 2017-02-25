@@ -12,7 +12,7 @@ using std::atan;
 using std::atan2;
 
 namespace VECTOR {
-    //const double Rad_to_degree = 45.0 / atan(1.0);
+    const double Rad_to_degree = 45.0 / atan(1.0);
 
     // private methods
     void Vector::set_mag() {
@@ -79,7 +79,7 @@ namespace VECTOR {
         }
         else if (form == POL) {
             mag = n1;
-            ang = n2;
+            ang = n2 / Rad_to_degree;
             set_x();
             set_y();
         }

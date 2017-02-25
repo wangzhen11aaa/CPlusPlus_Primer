@@ -22,6 +22,7 @@ int main(void)
     unsigned long steps = 0;
     double target;
     int dstep;
+    double direction;
     ofstream of_obj;
     of_obj.open("vector_m.log");
     if (!of_obj.is_open())
@@ -36,9 +37,8 @@ int main(void)
             break;
         of_obj << "Target Distance :" << target << ", " << "Step Size : " << dstep << std::endl;
         while (result.magval() < target) {
-            double x = rand() % dstep;
-            double y = rand() % dstep;
-            step.reset(x, y);
+            direction = rand() % 360;
+            step.reset(dstep, direction);
             result = result + step;
             steps++;
             of_obj << steps << ": (x,y) = (" << result.xval() << ", " << result.yval() << ")\n";

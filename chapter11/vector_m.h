@@ -16,7 +16,7 @@ namespace VECTOR
     public:
         Vector();
         Vector(double n1, double n2);
-        void reset(double n1, double n2);
+        void reset(double mag, double ang);
         ~Vector();
         double xval() const {return x;}//report x value
         double yval() const {return y;} //report y value

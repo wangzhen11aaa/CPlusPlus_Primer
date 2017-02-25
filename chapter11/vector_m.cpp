@@ -11,7 +11,10 @@ namespace VECTOR
     using std::sqrt;
     using std::atan;
     using std::atan2;
+    using std::cos;
+    using std::sin;
 
+    const double Rad_to_degree = 45.0/atan(1);
     Vector::Vector() // explict define default constructor
     {
         x = y = 0.0;
@@ -23,10 +26,11 @@ namespace VECTOR
         y = n2;
     }
 
-    void Vector::reset(double n1, double n2)
+    // reset function only for Polar coordinates input.
+    void Vector::reset(double mag, double ang)
     {
-        x = n1;
-        y = n2;
+        x = mag * cos(ang / Rad_to_degree);
+        y = mag * sin(ang / Rad_to_degree);
     }
 
     Vector::~Vector() { }
@@ -41,6 +45,7 @@ namespace VECTOR
     {
         return atan2(x, y);
     }
+
     // operator overloading
     // add two vectors
     Vector Vector::operator+(const Vector &b) const
