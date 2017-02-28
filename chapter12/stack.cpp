@@ -60,6 +60,8 @@ bool Stack::pop(Item &item)
 
 Stack & Stack::operator=(const Stack &st)
 {
+     if (*this = st)
+          return *this;
      delete [] __pitems; // clear old data
      __pitems = new Item[st.__size];
      for (int i = 0; i < __top; ++i)
