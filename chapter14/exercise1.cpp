@@ -3,7 +3,7 @@
 //
 
 //#include "winec.h"
-#include "winec_v2.h"
+#include "winec2.h"
 #include <iostream>
 
 int main(void)

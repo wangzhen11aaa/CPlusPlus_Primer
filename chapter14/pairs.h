@@ -21,12 +21,14 @@ public:
     Pair &operator=(const Pair &rs);
 };
 
-T1 & Pair::first()
+template<class T1, class T2>
+T1 & Pair<T1, T2>::first()
 {
     return a;
 }
 
-T2 &Pair::second()
+template<class T1, class T2>
+T2 &Pair<T1, T2>::second()
 {
     return b;
 }
