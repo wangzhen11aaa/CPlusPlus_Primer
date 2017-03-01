@@ -49,7 +49,7 @@ void Wine::GetBottles()
     }
 }
 
-int Wine::sum() const
+int Wine::Sum() const
 {
     int sum = 0;
     for (int i = 0 ; i < num_years; ++i)

@@ -2,7 +2,8 @@
 // Created by wangzhen on 28/02/2017.
 //
 
-#include "winec.h"
+//#include "winec.h"
+#include "winec_v2.h"
 #include <iostream>
 
 int main(void)
@@ -32,7 +33,7 @@ int main(void)
     more.Show();
 
     cout << "Total bottles for " << more.Label()
-            << ": " << more.sum() << endl;
+            << ": " << more.Sum() << endl;
     cout << "Bye \n";
     return 0;
 }

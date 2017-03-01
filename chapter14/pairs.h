@@ -12,15 +12,24 @@ private:
     T1 a;
     T2 b;
 public:
-    //T1 & first();
-    //T2 & second();
+    T1 & first();
+    T2 & second();
     T1 first() const {return a;}
     T2 second() const {return b;}
     Pair(const T1 &aval,const T2 &bval): a(aval), b(bval) {};
     Pair() {}
     Pair &operator=(const Pair &rs);
-
 };
+
+T1 & Pair::first()
+{
+    return a;
+}
+
+T2 &Pair::second()
+{
+    return b;
+}
 
 template <typename T1, typename T2>
 Pair<T1, T2> & Pair<T1, T2>::operator=(const Pair<T1, T2> &rs)
