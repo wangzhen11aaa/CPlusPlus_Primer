@@ -18,9 +18,21 @@ public:
     T2 second() const {return b;}
     Pair(const T1 &aval,const T2 &bval): a(aval), b(bval) {};
     Pair() {}
-    //Pair &operator=(const Pair &rs);
+    Pair &operator=(const Pair &rs);
 
 };
 
+template <typename T1, typename T2>
+Pair<T1, T2> & Pair<T1, T2>::operator=(const Pair<T1, T2> &rs)
+{
+    if (this == &rs)
+        return *this;
+    else
+    {
+        a = rs.a;
+        b = rs.b;
+        return *this;
+    }
+}
 
 #endif //CPP_BOOK_PAIRS_H
