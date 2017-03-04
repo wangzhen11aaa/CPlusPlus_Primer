@@ -13,7 +13,7 @@ private:
     long id;
 protected:
     virtual void Data() const;
-    virtual void Get() const;
+    virtual void Get();
 public:
     Worker(): fullname("no one") , id(0L) {} // default constructor
     Worker(const std::string &s, long n):fullname(s), id(n) {}
@@ -27,8 +27,8 @@ class Waiter:virtual public Worker
 private:
     int panache;
 protected:
-    void Data() const;
-    void Get() const;
+    virtual void Data() const;
+    virtual void Get();
 public:
     Waiter():Worker(), panache(0){}
     Waiter(const std::string &s, long n, int p = 0)
@@ -46,10 +46,10 @@ protected:
     enum{other, alto, contralto, soprano, bass, baritone, tenor};
 
     enum{Vtype = 7};
-    void Get() const;
-    void Data() const;
+    virtual void Get();
+    virtual void Data() const;
 private:
-    static char *pv[Vtype]; // string equivs of voice types
+    static const char *pv[Vtype]; // string equivs of voice types
     int voice;
 public:
     Singer():Worker(), voice(other) {}
@@ -63,11 +63,11 @@ public:
 };
 
 // multiple inheritance
-class SingingWaiter: public Singer, public Waiter
+class SingingWaiter:  public Waiter ,public Singer
 {
 protected:
-    void Data() const;
-    void Get();
+    virtual void Data() const;
+    virtual void Get();
 public:
     SingingWaiter() {}
     SingingWaiter(const std::string &s, long n, int p = 0, int v = other)
