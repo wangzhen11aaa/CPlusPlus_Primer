@@ -4,6 +4,7 @@
 
 #include "worker.h"
 #include <iostream>
+#include <string>
 
 using std::cin;
 using std::cout;
@@ -32,7 +33,7 @@ void Worker::Get()
 void Waiter::Set()
 {
     cout << "Enter waiter's name : ";
-    Worker::Set();
+    Worker::Get();
     Get();
 }
 
@@ -43,6 +44,12 @@ void Waiter::Data() const
 
 }
 
+void Waiter::Show() const
+{
+    cout << "Category : waiter \n";
+    Worker::Data();
+    Data();
+}
 void Waiter::Get()
 {
     cout << "Enter waiter's panache rating :";
@@ -52,7 +59,7 @@ void Waiter::Get()
 }
 
 //Singer Methods
-char *Singer::pv[Singer::Vtype] = {"other", "alto", "contralto", "soprano", "bass", "baritone", "tenor"};
+const char *Singer::pv[Singer::Vtype] = {"other", "alto", "contralto", "soprano", "bass", "baritone", "tenor"};
 
 void Singer::Set()
 {
@@ -63,14 +70,21 @@ void Singer::Set()
 
 void Singer::Show() const
 {
-    cout << "Vocal range: " << pv[voice] << endl;
+    cout << "Category : singer \n";
+    Worker::Data();
+    Data();
 }
 
+//protected methods;
+void Singer::Data() const
+{
+    cout << "Vocal range : " << pv[voice] << endl;
+}
 void Singer::Get()
 {
     cout << "Enter singer's vocal range:\n";
     int i;
-    for (i = 0; i < Vtypes; i++) {
+    for (i = 0; i < Vtype; i++) {
         cout << i << ": " << pv[i] << " ";
         if ( i % 4 == 3)
             cout << endl;
