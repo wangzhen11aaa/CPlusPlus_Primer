@@ -46,7 +46,8 @@ int main(void)
     catch(Sales::bad_index & bad)
     {
         cout << bad.what();
-        if (excpt = dynamic_cast<LabeledSales::nbad_index *> (&bad)) // if ref exception = nbax_index
+        //if (excpt = dynamic_cast<LabeledSales::nbad_index *> (&bad)) // if ref exception = nbax_index
+        if (typeid(bad) == typeid(LabeledSales::bad_index)) // if ref exception = nbax_index
             cout << "Compnay : " << excpt->label_val() << endl;
         cout << "bad index : "<< bad.bi_val() << endl;
     }
