@@ -17,6 +17,7 @@ public:
     Person():__first_name("name"), __last_name("default") { std::cout << "abc \n";}
     Person(const string first_name, const string last_name): __first_name(first_name), __last_name(last_name){}
     virtual void Show() const;
+    virtual void Gdraw() const = 0;
 };
 
 class Gunslinger: virtual public Person
@@ -29,6 +30,7 @@ public:
     void Data() const;
     Gunslinger(Person & p, double draw_time = 0.5): Person(p), __draw_time(draw_time) {}
     Gunslinger(string first_name, string last_name, double draw_time = 0.5): Person(first_name, last_name), __draw_time(draw_time) {}
+    virtual void Gdraw() const {};
     virtual void Draw() const { std::cout <<  __draw_time << std::endl;}
 };
 
@@ -39,6 +41,7 @@ private:
 public:
     PorkerPlayer(): Person(), __card_number(1){}
     virtual void Show() const;
+    virtual void Gdraw() const {};
     void Data() const;
     virtual void Draw() const { std::cout << __card_number << std::endl;}
     PorkerPlayer(Person &p, int card_number = 1): Person(p), __card_number(card_number) {}
