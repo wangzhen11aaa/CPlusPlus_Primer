@@ -60,3 +60,9 @@ int reduce(long ar[], int n)
     return var.size();
 }
 
+void exchange(long *s, long *t)
+{
+    long r = *s;
+    *s = *t;
+    *t = r;
+}
