@@ -30,6 +30,8 @@ int MatrixChainOrder(int p[], int n)
         {
             j = i + L - 1;
             m[i][j] = INT_MAX;
+
+            // the usage of k is to use the intermediate result
             for (k = i; k < j; ++k)
             {
                 q = m[i][k] + m[k+1][j] + p[i-1] * p[k] * p[j];
